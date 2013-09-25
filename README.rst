@@ -11,12 +11,12 @@ Concept
 * Deploy binaries of Storm to /var/lib/storm.
 * Manage the serice packages separately from the main sources of Storm.
 * Make "storm" user and "storm" group to start processes.
-* Use shell scripts provided by the Storm project to manage processes.
+* Use the shell script function provided by the Storm project to manage processes in the init script.
 
 ==========================
 Requriement
 ==========================
-* CentOS6
+* Distribution: CentOS6
 * The following packages should be installed.
 
   + rpm-build
@@ -53,6 +53,13 @@ command example::
  $ mv storm-0.9.0-wip21 storm-0.9.0
  $ tar cvzf storm-0.9.0.tgz storm-0.9.0
 
+If you don't have ~/rpmbuild directory,
+you need to make directories.
+
+command sample::
+
+ $ mkdir -p ~/rpmbuild/BUILD ~/rpmbuild/BUILDROOT ~/rpmbuild/RPMS ~/rpmbuild/SOURCES ~/rpmbuild/SPECS ~/rpmbuild/SRPMS
+
 Copy tgz file to the rpmbuild directory.
 
 command example::
@@ -76,7 +83,10 @@ Build rpm.
 
 command example::
 
- $ rpmbuild -ba /root/rpmbuild/SPECS/storm.spec
+ $ rpmbuild -ba ~/rpmbuild/SPECS/storm.spec
+
+As a result of this command,
+you get ~/rpmbuild/RPMS/x86_64/storm-0.9.0-wip21.x86_64.rpm.
 
 ================================
 How to make Storm service rpm
@@ -117,15 +127,20 @@ Build rpm.
 
 command example::
 
- $ rpmbuild -ba /root/rpmbuild/SPECS/storm-service.spec
+ $ rpmbuild -ba ~/rpmbuild/SPECS/storm-service.spec
+
+As a result of this command,
+you get ~/rpmbuild/RPMS/x86_64/storm-service-0.9.0-wip21.x86_64.rpm.
 
 =========================
 ToDo
 =========================
 The following is the main of ToDo.
 
-* <to-do>
+* Bring init scripts into compliance with LSB.
 
+  + http://refspecs.linuxbase.org/LSB_3.1.1/LSB-Core-generic/LSB-Core-generic/iniscrptact.html
 
+* Gather configration files into /etc/storm directory.
 
 .. vim: ft=rst tw=0
