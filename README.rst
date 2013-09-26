@@ -12,6 +12,7 @@ Concept
 * Manage the serice packages separately from the main sources of Storm.
 * Make "storm" user and "storm" group to start processes.
 * Use the shell script function provided by the Storm project to manage processes in the init script.
+* Storm 0.9.0-wip21 is used in the following procedure.
 
 ==========================
 Requriement
