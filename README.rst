@@ -17,6 +17,7 @@ Concept
 ==========================
 Requriement
 ==========================
+* Internet access
 * Distribution: CentOS6
 * The following packages should be installed.
 
