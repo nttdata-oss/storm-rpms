@@ -143,5 +143,6 @@ The following is the main of ToDo.
   + http://refspecs.linuxbase.org/LSB_3.1.1/LSB-Core-generic/LSB-Core-generic/iniscrptact.html
 
 * Gather configration files into /etc/storm directory.
+* Use alternatives.
 
 .. vim: ft=rst tw=0
