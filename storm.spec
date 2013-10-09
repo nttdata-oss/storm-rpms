@@ -57,7 +57,3 @@ getent passwd %{storm_user} >/dev/null || /usr/sbin/useradd --comment "Storm Dae
 
 %files -f files.txt
 %defattr(-,%{storm_user},%{storm_group},-)
-
-%changelog
-* Thu Aug 1 2013 dobachi
-- Storm-0.9.0-wip21 Packaging
