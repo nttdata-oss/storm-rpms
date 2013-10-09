@@ -9,9 +9,9 @@ Feature
 ==========================
 
 * Deploy binaries of Storm to /var/lib/storm.
-* Manage the serice packages separately from the main sources of Storm.
+* Separately make rpms of Storm and Strom init scripts.
 * Make "storm" user and "storm" group to start processes.
-* Use the shell script function provided by the Storm project to manage processes in the init script.
+* Use the "storm" command provided in Storm project to start and stop services.
 * Storm 0.9.0-wip21 is used in the following procedure.
 
 ==========================
