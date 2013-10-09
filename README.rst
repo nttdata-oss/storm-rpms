@@ -5,7 +5,7 @@ README
 .. sectnum::
 
 ==========================
-Concept
+Feature
 ==========================
 
 * Deploy binaries of Storm to /var/lib/storm.
