@@ -70,8 +70,3 @@ getent passwd %{storm_user} >/dev/null || /usr/sbin/useradd --comment "Storm Dae
 %defattr(-,%{storm_user},%{storm_group})
 /var/log/storm
 /var/run/storm/
-
-%changelog
-* Thu Aug 08 2013 dobachi
-* Initial Packaging
-
