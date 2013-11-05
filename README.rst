@@ -12,7 +12,7 @@ Feature
 * Separately make rpms of Storm and Strom init scripts.
 * Make "storm" user and "storm" group to start processes.
 * Use the "storm" command provided in Storm project to start and stop services.
-* Storm 0.9.0-wip21 is used in the following procedure.
+* Storm 0.9.0-rc2 is used in the following procedure.
 
 ==========================
 Requriement
@@ -45,14 +45,14 @@ Download storm binaries from the official download link.
 
 command example::
 
- $ wget https://dl.dropbox.com/u/133901206/storm-0.9.0-wip21.zip
+ $ wget https://dl.dropboxusercontent.com/s/p5wf0hsdab5n9kn/storm-0.9.0-rc2.zip
 
 Rename zip file.
 
 command example::
 
- $ unzip -o storm-0.9.0-wip21.zip
- $ mv storm-0.9.0-wip21 storm-0.9.0
+ $ unzip -o storm-0.9.0-rc2.zip
+ $ mv storm-0.9.0-rc2 storm-0.9.0
  $ tar cvzf storm-0.9.0.tgz storm-0.9.0
 
 If you don't have ~/rpmbuild directory,
@@ -88,7 +88,7 @@ command example::
  $ rpmbuild -ba ~/rpmbuild/SPECS/storm.spec
 
 As a result of this command,
-you get ~/rpmbuild/RPMS/x86_64/storm-0.9.0-wip21.x86_64.rpm.
+you get ~/rpmbuild/RPMS/x86_64/storm-0.9.0-rc2.x86_64.rpm.
 
 ================================
 How to make Storm service rpm
@@ -132,7 +132,7 @@ command example::
  $ rpmbuild -ba ~/rpmbuild/SPECS/storm-service.spec
 
 As a result of this command,
-you get ~/rpmbuild/RPMS/x86_64/storm-service-0.9.0-wip21.x86_64.rpm.
+you get ~/rpmbuild/RPMS/x86_64/storm-service-0.9.0-rc2.x86_64.rpm.
 
 =========================
 ToDo
