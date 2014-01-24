@@ -1,16 +1,16 @@
 %define storm_name storm
 %define storm_branch 0.9
-%define storm_ver 0.9.0_rc2
-%define storm_version 0.9.0
-%define release_version 4
+%define storm_ver 0.9.0.1
+%define storm_version 0.9.0.1
+%define release_version 1
 %define storm_home /var/lib/storm/%{storm_name}-%{storm_version}
 %define config_storm %{storm_home}/conf
 %define storm_user storm
 %define storm_group storm
 
 Name: storm-service
-Version: 0.9.0
-Release: rc2
+Version: 0.9.0.1
+Release: 1
 Summary: Storm Complex Event Processing Daemon Package
 Group: Applications/Internet
 License: EPLv1
@@ -45,7 +45,7 @@ Storm has a website at storm-project.net.
 %{__mkdir_p} %{buildroot}/var/log/storm
 %{__mkdir_p} %{buildroot}/var/run/storm
 
-%{__mv} init.d/storm-nimbus init.d/storm-supervisor init.d/storm-ui %{buildroot}/etc/init.d
+%{__mv} init.d/storm-nimbus init.d/storm-supervisor init.d/storm-ui init.d/storm-drpc %{buildroot}/etc/init.d
 %{__mv} sysconfig/storm %{buildroot}/etc/sysconfig/storm
 
 
@@ -66,6 +66,7 @@ getent passwd %{storm_user} >/dev/null || /usr/sbin/useradd --comment "Storm Dae
 /etc/init.d/storm-nimbus
 /etc/init.d/storm-supervisor
 /etc/init.d/storm-ui
+/etc/init.d/storm-drpc
 /etc/sysconfig/storm
 %defattr(-,%{storm_user},%{storm_group})
 /var/log/storm

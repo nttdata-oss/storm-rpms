@@ -1,16 +1,16 @@
 %define storm_name storm
 %define storm_branch 0.9
-%define storm_ver 0.9.0_rc2
-%define storm_version 0.9.0
-%define release_version 4
+%define storm_ver 0.9.0.1
+%define storm_version 0.9.0.1
+%define release_version 1
 %define storm_home /var/lib/storm/%{storm_name}-%{storm_version}
 %define config_storm %{storm_home}/conf
 %define storm_user storm
 %define storm_group storm
 
 Name: storm
-Version: 0.9.0
-Release: rc2
+Version: 0.9.0.1
+Release: 1
 Summary: Storm Complex Event Processing
 Group: Applications/Internet
 License: EPLv1
