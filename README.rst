@@ -40,7 +40,7 @@ Download spec files from the repository.
 command example::
 
  $ cd <your working directory>
- $ git clone https://bitbucket.org/dobachi/storm-rpm.git
+ $ git clone https://github.com/nttdata-oss/storm-rpms
 
 ------------------------
 Download storm binaries
