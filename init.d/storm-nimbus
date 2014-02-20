@@ -3,9 +3,11 @@
 # /etc/init.d/storm-nimbus
 #
 # Startup script for storm-nimbus
-
+#
+# chkconfig: 2345 20 80
+# description: Starts and stops storm-nimbus
 . /etc/init.d/functions
-stormBin=/var/lib/storm/default/bin/storm
+stormBin=/usr/lib/storm/default/bin/storm
 stormSvc=$(echo $0 | cut -d'-' -f2)
 desc="Storm $stormSvc daemon"
 outFile="/var/log/storm/storm-$stormSvc.out"
