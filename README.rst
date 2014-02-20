@@ -8,7 +8,7 @@ README
 Feature
 ==========================
 
-* Deploy binaries of Storm to /var/lib/storm.
+* Deploy binaries of Storm to /usr/lib/storm.
 * Separately make rpms of Storm and Strom init scripts.
 * Make "storm" user and "storm" group to start processes.
 * Use the "storm" command provided in Storm project to start and stop services.
