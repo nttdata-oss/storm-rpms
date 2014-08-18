@@ -10,7 +10,7 @@
 stormBin=/usr/lib/storm/default/bin/storm
 stormSvc=$(echo $0 | cut -d'-' -f2)
 desc="Storm $stormSvc daemon"
-outFile="/var/log/storm/storm-$stormSvc.out"
+outFile="/var/log/storm/$stormSvc.out"
 
 if ! [ -f $stormBin ]; then
   echo "storm binary not found."
