@@ -41,6 +41,8 @@ command example::
 
  $ cd <your working directory>
  $ git clone https://github.com/nttdata-oss/storm-rpms
+ $ cd storm-rpms
+ $ git checkout -b v0.9.2-incubating refs/tags/0.9.2-incubating
 
 ------------------------
 Download storm binaries
