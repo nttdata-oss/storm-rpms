@@ -1,23 +1,22 @@
 %define storm_name storm
 %define storm_branch 0.9
-%define storm_ver 0.9.0.1
-%define storm_version 0.9.0.1
-%define release_version 2
+%define storm_ver 0.9.2
+%define storm_version 0.9.2
+%define release_version 3 
 %define storm_home /usr/lib/storm/%{storm_name}-%{storm_version}
 %define config_storm %{storm_home}/conf
 %define storm_user storm
 %define storm_group storm
 
 Name: storm
-Version: 0.9.0.1
-Release: 2
+Version: 0.9.2
+Release: 3 
 Summary: Storm Complex Event Processing
 Group: Applications/Internet
 License: EPLv1
 URL: http://storm-project.net
 Source: https://github.com/downloads/nathanmarz/storm/storm-%{version}.tgz
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: jzmq
 %description
 Storm is a distributed realtime computation system.
 Similar to how Hadoop provides a set of general primitives for doing batch processing,
@@ -40,10 +39,12 @@ Storm has a website at storm-project.net.
 [ "%{buildroot}" != "/" ] && %{__rm} -rf %{buildroot}
 
 # Copy the storm file to the right places
+%{__mkdir_p} %{buildroot}/var/storm
+%{__mkdir_p} %{buildroot}/var/log/storm
 %{__mkdir_p} %{buildroot}/usr/lib/storm
-%{__mkdir_p} %{buildroot}/usr/lib/storm/storm-%{version}
-%{__cp} -R * %{buildroot}/usr/lib/storm/storm-%{version}/
-%{__ln_s} /usr/lib/storm/storm-%{version} %{buildroot}/usr/lib/storm/default
+%{__mkdir_p} %{buildroot}/usr/lib/storm/storm-%{version}-%{release}
+%{__cp} -R * %{buildroot}/usr/lib/storm/storm-%{version}-%{release}
+%{__ln_s} /usr/lib/storm/storm-%{version}-%{release} %{buildroot}/usr/lib/storm/default
 
 # Form a list of files for the files directive
 echo $(cd %{buildroot} && find . | cut -c 2-) | tr ' ' '\n' > files.txt
@@ -57,3 +58,5 @@ getent passwd %{storm_user} >/dev/null || /usr/sbin/useradd --comment "Storm Dae
 
 %files -f files.txt
 %defattr(-,%{storm_user},%{storm_group},-)
+/var/storm
+/var/log/storm

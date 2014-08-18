@@ -12,7 +12,7 @@ Feature
 * Separately make rpms of Storm and Strom init scripts.
 * Make "storm" user and "storm" group to start processes.
 * Use the "storm" command provided in Storm project to start and stop services.
-* Storm 0.9.0.1 is used in the following procedure.
+* Storm 0.9.2-incubating is used in the following procedure.
 
 ==========================
 Requriement
@@ -49,15 +49,15 @@ Download storm binaries from the official download link.
 
 command example::
 
- $ wget https://dl.dropboxusercontent.com/s/dj86w8ojecgsam7/storm-0.9.0.1.zip
+ $ wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/incubator/storm/apache-storm-0.9.2-incubating/apache-storm-0.9.2-incubating.zip
 
 Rename zip file.
 
 command example::
 
- $ unzip -o storm-0.9.0.1.zip
- $ mv storm-0.9.0.1 storm-0.9.0
- $ tar cvzf storm-0.9.0.tgz storm-0.9.0
+ $ unzip -o apache-storm-0.9.2-incubating.zip
+ $ mv apache-storm-0.9.2-incubating storm-0.9.2
+ $ tar cvzf storm-0.9.2.tgz storm-0.9.2
 
 If you don't have ~/rpmbuild directory,
 you need to make directories.
@@ -70,7 +70,7 @@ Copy tgz file to the rpmbuild directory.
 
 command example::
 
- $ cp storm-0.9.0.tgz ~/rpmbuild/SOURCES
+ $ cp storm-0.9.2.tgz ~/rpmbuild/SOURCES
 
 ------------------
 Copy spec file
@@ -92,7 +92,7 @@ command example::
  $ rpmbuild -ba ~/rpmbuild/SPECS/storm.spec
 
 As a result of this command,
-you get ~/rpmbuild/RPMS/x86_64/storm-0.9.0.1.x86_64.rpm.
+you get ~/rpmbuild/RPMS/x86_64/storm-0.9.2.x86_64.rpm.
 
 ================================
 How to make Storm service rpm
@@ -105,9 +105,9 @@ Copy scripts and config files to rpmbuild directory.
 
 command example::
 
- $ mkdir ~/rpmbuild/SOURCES/storm-service-0.9.0
- $ cp -r storm-rpm/init.d ~/rpmbuild/SOURCES/storm-service-0.9.0
- $ cp -r storm-rpm/sysconfig ~/rpmbuild/SOURCES/storm-service-0.9.0
+ $ mkdir ~/rpmbuild/SOURCES/storm-service-0.9.2
+ $ cp -r storm-rpm/init.d ~/rpmbuild/SOURCES/storm-service-0.9.2
+ $ cp -r storm-rpm/sysconfig ~/rpmbuild/SOURCES/storm-service-0.9.2
 
 Make tar file.
 
