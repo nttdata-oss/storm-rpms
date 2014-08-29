@@ -59,7 +59,7 @@ status() {
 
   if [ -z $pid ]; then
     echo "storm-$stormSvc is NOT running."
-    return 1
+    return 3
   else
     echo "storm-$stormSvc is running (pid is $pid)."
   fi
